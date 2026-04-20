@@ -5,8 +5,8 @@ package com.mycompany.poe_part1;
 public class Login {
     private String firstName;
     private String lastName;
-    private String password;
     private String username;
+    private String password;
     private String cellPhoneNumber;
     
     
@@ -14,8 +14,8 @@ public class Login {
 public Login(String firstName, String lastName, String password, String username, String cellPhoneNumber){
     this.firstName = firstName;
     this.lastName = lastName;
-    this.password = password;
     this.username = username;
+    this.password = password;
     this.cellPhoneNumber = cellPhoneNumber;
 
 }
