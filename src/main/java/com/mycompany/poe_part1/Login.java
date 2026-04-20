@@ -48,11 +48,25 @@ public Login(String firstName, String lastName, String password, String username
  return hasCapital && hasNumber && hasSpecial;
  }
  
- public boolean checkCellPhoneNumber(){
- return false;}
  
+ //Regex pattern adapted from: https://docs.galileo-ft.com/pro/reference/api-reference-phone-validation 
+ public boolean checkCellPhoneNumber(){
+ return cellPhoneNumber.matches("^\\+27\\d{9}$");}
+ 
+ // This method validates user input and returns appropriate messages
+// based on whether the username, password, and cell phone number are correct
  public String registerUser(){
- return "";}
+ if(!checkUserName()){
+    return "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.";
+ }
+ if (!checkPasswordComplexity()){
+     return "Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character";
+ }
+ if(!checkCellPhoneNumber()){
+     return "Cell phone number incorrectly formatted or does not contain international code.";
+ }
+ return "User successfully registered.";
+ }
  
  public boolean loginUser(String inputUserName, String inputPassword){
  return false;}
