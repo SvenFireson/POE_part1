@@ -23,7 +23,7 @@ public class Main {
         System.out.println("Enter your cell phone Number: ");
         String cellPhoneNumber = scanner.nextLine();
         
-        Login user = new Login(firstName,lastName,username,password,cellPhoneNumber);
+        Login user = new Login(firstName,lastName,password,username,cellPhoneNumber);
         
         //Purpose of the registration message Only allow login if registration was successful
        String registrationMessage = user.registerUser();
