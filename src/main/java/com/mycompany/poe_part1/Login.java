@@ -22,10 +22,31 @@ public Login(String firstName, String lastName, String password, String username
 
 // creating methods for attribuites using booleans
  public boolean  checkUserName(){
- return false;} 
+    if(username.contains("_") && username.length() <=5){
+        return true;}
+    else {return false;}
+ } 
  
  public boolean checkPasswordComplexity(){
+ boolean hasCapital = false;
+ boolean hasNumber = false;
+ boolean hasSpecial = false;
+ 
+ if(password.length()<8){
  return false;}
+ 
+ for(int i = 0; i< password.length();i++){
+    char ch = password.charAt(i);
+ 
+ if(Character.isUpperCase(ch)){
+     hasCapital = true;}
+ else if(Character.isDigit(ch)){
+         hasNumber = true;}
+         else if (!Character.isLetterOrDigit(ch)){
+         hasSpecial = true;}
+         }
+ return hasCapital && hasNumber && hasSpecial;
+ }
  
  public boolean checkCellPhoneNumber(){
  return false;}
