@@ -3,7 +3,7 @@ package com.mycompany.poe_part1;
 
 //These are all my attributes to store user information for login
 public class Login {
-    private String firtName;
+    private String firstName;
     private String lastName;
     private String password;
     private String username;
@@ -12,7 +12,7 @@ public class Login {
     
     // this ensures that I am allowing allocations for my attributtes
 public Login(String firstName, String lastName, String password, String username, String cellPhoneNumber){
-    this.firtName = firstName;
+    this.firstName = firstName;
     this.lastName = lastName;
     this.password = password;
     this.username = username;
@@ -68,10 +68,20 @@ public Login(String firstName, String lastName, String password, String username
  return "User successfully registered.";
  }
  
+  //chceks whether the entered login details match the registered details
  public boolean loginUser(String inputUserName, String inputPassword){
- return false;}
+     if(inputUserName.equals(username) && inputPassword.equals(password)){
+     return true;
+     }else{
+     return false;}
+ }
  
+ //chceks whether the correct login message based on whether login was successful
  public String returnLoginStatus(boolean loginSuccess){
- return "";}
+ if(loginSuccess){
+     return "Welcome "+ firstName + ", " +lastName + " it is great to see you again";
+ }else {
+ return "Username or password incorrect, please try again";}
+ }
  
-}
+}  
