@@ -20,6 +20,12 @@ public Login(String firstName, String lastName, String password, String username
 
 }
 
+public boolean checkFirstName(String firstName){
+    return firstName.matches("[a-zA-Z]+");
+            }
+public boolean checkLastName(String firstName){
+    return lastName.matches("[a-zA-Z]+");
+            }
 // creating methods for attribuites using booleans
  public boolean  checkUserName(){
     if(username.contains("_") && username.length() <=5){

@@ -8,11 +8,32 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
+        String firstName;
+        while(true){
         System.out.println("Enter your first name: ");
-        String firstName = scanner.nextLine();
+        firstName = scanner.nextLine();
         
+        if(firstName.matches("[a-zA-Z]+")){
+            break;
+        }else {
+            System.out.println("Invalid first name. Please use letters only.");
+        }
+            }
+        
+        
+        String lastName;
+        while(true){
         System.out.println("Enter your last name: ");
-        String lastName = scanner.nextLine();
+        lastName = scanner.nextLine();
+        
+        if(lastName.matches("[a-zA-Z]+")){
+            break; 
+        }else {
+            System.out.println("Invalid last name. Please use letters only.");
+        }
+        }
+        
+        
         
         System.out.println("Enter username: ");
         String username = scanner.nextLine();
